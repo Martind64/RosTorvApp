@@ -1,0 +1,22 @@
+<!--
+  Generated template for the ShopsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ShopsPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <ion-list>
+    <ion-item *ngFor="let store of stores">
+      <p>{{store.name}}</p>
+    </ion-item>
+   </ion-list>
+</ion-content>
