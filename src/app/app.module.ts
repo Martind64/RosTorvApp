@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ShopsPage } from '../pages/shops-page/shops-page';
 import { CategoryPage } from '../pages/category-page/category-page';
+import { MapsPage } from '../pages/maps-page/maps-page';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CategoryPage } from '../pages/category-page/category-page';
     HomePage,
     ShopsPage,
     CategoryPage,
+    MapsPage,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { CategoryPage } from '../pages/category-page/category-page';
     HomePage,
     ShopsPage,
     CategoryPage,
+    MapsPage,
   ],
   providers: [
     StatusBar,
