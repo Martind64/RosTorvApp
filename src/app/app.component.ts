@@ -13,7 +13,7 @@ import { EventsPage } from '../pages/events-page/events-page';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = EventsPage;
+  rootPage:any = MapsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
