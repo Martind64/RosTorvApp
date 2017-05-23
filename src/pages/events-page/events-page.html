@@ -13,15 +13,18 @@
 </ion-header>
 
 
-<ion-content class="card-background-page">
-
-  <ion-card>
-    <img src="img/flowers.jpg"/>
-    <div class="card-title">Blomster dag</div>
-    <div class="card-subtitle">15-07-2017</div>
+<ion-content class="card-background-page getstart">
+<!--    <ion-list>
+    <ion-item *ngFor="let event of events">
+      <p>{{event.name}}</p>
+      <p>{{event.description}}</p> -->  
+  <ion-card (click)="eventinfoPage(event)" *ngFor="let event of events">
+    <img src="{{event.img_path}}"/>
+    <div class="card-title">{{event.name}}</div>
+    <div class="card-subtitle">{{event.start_date}}</div>
   </ion-card>
 
-  <ion-card>
+<!--   <ion-card>
     <img src="img/biograf.jpg"/>
     <div class="card-title">Biografernes dag</div>
     <div class="card-subtitle">22-10-2017</div>
@@ -38,5 +41,8 @@
     <div class="card-title">Månedens kunstnere</div>
     <div class="card-subtitle">11-06-2017</div>
   </ion-card>
+ --> 
 
+ 	<!-- </ion-item>
+</ion-list> -->
 </ion-content>

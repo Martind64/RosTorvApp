@@ -1,4 +1,4 @@
-page-events-page {
+page-event-info-page {
 
 .card-background-page {
 
@@ -26,9 +26,16 @@ page-events-page {
   }
 
 }
+p {
+	font-weight: bold;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+}
 .getstart{
 background: url('../../img/shopping.jpg');
 background-repeat: no-repeat;
 background-size:cover;
 }
 }
+
