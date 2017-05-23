@@ -24,8 +24,7 @@ export class MapsPage {
 
   ionViewDidLoad() {
   	this.loadMap();
-      this.addMarker();
-    
+    this.addMarker();
   }
 
   loadMap(){
@@ -44,6 +43,7 @@ export class MapsPage {
   	}, (err)=> {
   		console.log(err);
   	});
+
   }
 
     addInfoWindow(marker){
@@ -57,7 +57,11 @@ export class MapsPage {
      
     }
 
-      addMarker(){
+
+      // Add Marker to the map with your current position
+      // async is to delay the function so the dot with always show
+      async addMarker(){
+        await this.delay(200);
          this.geoLocation.getCurrentPosition().then((position) => {
             let marker = new google.maps.Marker({
               clickable: false,
@@ -75,17 +79,17 @@ export class MapsPage {
          });
     }  
 
-    //   addMarker(){
-    //      this.geoLocation.getCurrentPosition().then((position) => {
-    //     let marker = new google.maps.Marker({
-    //       map: this.map,
-    //       animation: google.maps.Animation.DROP,
-    //       position: {lat: position.coords.latitude, lng: position.coords.longitude}
-    //     });     
-    //     let content = "<h4>Information!</h4>";          
-       
-    //     this.addInfoWindow(marker, content);
-    //      });
-    // }
+    // Used to reload map and set location again
+    newMap(){
+      this.loadMap();
+      this.addMarker();
+    }
+
+    // Delays a function a given number of MS
+    delay(ms: number) {
+      return new Promise<void>(function(resolve) {
+          setTimeout(resolve, ms);
+    });
+  }
 
 }
