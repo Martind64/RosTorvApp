@@ -20,6 +20,7 @@
     "@angular/http": "4.1.0",
     "@angular/platform-browser": "4.1.0",
     "@angular/platform-browser-dynamic": "4.1.0",
+    "@ionic-native/barcode-scanner": "^3.10.3",
     "@ionic-native/core": "3.7.0",
     "@ionic-native/geolocation": "^3.10.3",
     "@ionic-native/google-maps": "^3.10.3",

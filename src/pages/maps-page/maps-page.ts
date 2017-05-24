@@ -1,7 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { TreasurehuntPage } from '../treasurehunt-page/treasurehunt-page';
 /**
  * Generated class for the MapsPage page.
  *
@@ -18,11 +19,11 @@ export class MapsPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
- 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public geoLocation:Geolocation) {
-    let r =  this.navParams.get('lat');
-    let e =  this.navParams.get('lng');
-    console.log(r, e);
+  public currentLevel:any;
+  public clue:any;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public geoLocation:Geolocation, private barcodeScanner: BarcodeScanner) {
+    this.setLevel();
   }
 
   ionViewDidLoad() {
@@ -63,7 +64,7 @@ export class MapsPage {
       // Add Marker to the map with your current position
       // async is to delay the function so the dot with always show
       async addMarker(){
-        await this.delay(200);
+        await this.delay(1000);
          this.geoLocation.getCurrentPosition().then((position) => {
             let marker = new google.maps.Marker({
               clickable: false,
@@ -92,6 +93,45 @@ export class MapsPage {
       return new Promise<void>(function(resolve) {
           setTimeout(resolve, ms);
     });
+  }
+
+  scanBarcode(){
+
+    this.barcodeScanner.scan().then((data) => {
+      if (sessionStorage.getItem('clue') != null) {
+        this.clue = JSON.parse(sessionStorage.getItem('clue'));
+      }
+      if (sessionStorage.getItem('clue') == null) {
+        sessionStorage.setItem('clue', JSON.stringify({clue: data.text}));
+      }else{
+        sessionStorage.setItem('clue', JSON.stringify({}))
+      }
+      sessionStorage.setItem('clue', JSON.stringify({clue : data.text}));
+      this.navCtrl.setRoot(TreasurehuntPage)
+  });
+  }
+
+  // Set the level of the game
+  setLevel(){
+      // Set the current lvl property to the level of the storage so it can be incremented
+      this.currentLevel = JSON.parse(sessionStorage.getItem('level'));
+      if (!this.currentLevel) {
+        this.currentLevel = {lvl: null};
+      }
+      console.log(this.currentLevel.lvl);
+
+      if (this.currentLevel.lvl == null) {
+        sessionStorage.setItem('level', JSON.stringify({lvl: '1'}));
+      }else if(this.currentLevel.lvl == '1'){
+        sessionStorage.setItem('level', JSON.stringify({lvl: '2'}));
+      }else if(this.currentLevel.lvl == '2'){
+        sessionStorage.setItem('level', JSON.stringify({lvl: '3'}));
+      }else if(this.currentLevel.lvl == '3'){
+        sessionStorage.setItem('level', JSON.stringify({lvl: '4'}));
+      }else if (this.currentLevel.lvl == '4') {
+         sessionStorage.setItem('level', JSON.stringify({lvl: 'complete'}));
+      }
+      console.log(this.currentLevel.lvl);
   }
 
 }

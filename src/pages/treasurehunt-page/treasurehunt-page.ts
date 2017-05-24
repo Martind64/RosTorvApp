@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { MapsPage } from '../maps-page/maps-page';
 
 /**
@@ -15,13 +15,24 @@ import { MapsPage } from '../maps-page/maps-page';
 })
 export class TreasurehuntPage {
 
-	public sentence = [];
+	// Used to send positions of each button
 	public clues = [];
+
 	public completedClues = [];
+	public currentLevel:any;
+ 
 
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+	// let alert = this.alertCtrl.create({
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ //      subTitle: this.currentLevel,
+ //      buttons: ['OK']
+ //    });
+ //    alert.present();	
+ 	// this.clues = JSON.parse(sessionStorage.getItem('clue'));
+
+    this.currentLevel = JSON.parse(sessionStorage.getItem('level'));
   	this.fillClues();
   }
 
@@ -31,6 +42,7 @@ export class TreasurehuntPage {
 
   goToMap(lat, lng){
   	this.navCtrl.push(MapsPage, {lat: lat, lng: lng});
+    // console.log(this.currentLevel.lvl);
   }
 
   fillClues(){
@@ -41,9 +53,6 @@ export class TreasurehuntPage {
 		['55.641378', '12.099014']
   	];
   }
-
-
-
 
 
 }

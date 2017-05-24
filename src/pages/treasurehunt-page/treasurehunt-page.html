@@ -19,7 +19,7 @@
 
   	<!-- Start Button grid -->
 	<ion-grid id="btnGrid">
-		<ion-row>
+		<ion-row *ngIf="currentLevel">
 			<ion-col col-12 text-center padding>
 				<button ion-button block (click)="goToMap(clues[0][0], clues[0][1])">Spor 1</button>
 			</ion-col>

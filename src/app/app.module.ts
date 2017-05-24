@@ -13,6 +13,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { EventsPage} from '../pages/events-page/events-page';
 import { EventInfoPage } from '../pages/event-info-page/event-info-page';
 import { TreasurehuntPage } from '../pages/treasurehunt-page/treasurehunt-page';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { TreasurehuntPage } from '../pages/treasurehunt-page/treasurehunt-page';
     StatusBar,
     SplashScreen,
     Geolocation,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
