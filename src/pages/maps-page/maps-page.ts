@@ -20,6 +20,9 @@ export class MapsPage {
   map: any;
  
   constructor(public navCtrl: NavController, public navParams: NavParams, public geoLocation:Geolocation) {
+    let r =  this.navParams.get('lat');
+    let e =  this.navParams.get('lng');
+    console.log(r, e);
   }
 
   ionViewDidLoad() {
@@ -36,7 +39,6 @@ export class MapsPage {
 	      center: latLng,
         disableDefaultUI: true,
 	      zoom: 18,
-	      mapTypeId: google.maps.MapTypeId.ROADMAP,
 
     }
     	this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);

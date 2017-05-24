@@ -12,6 +12,7 @@ import { MapsPage } from '../pages/maps-page/maps-page';
 import { Geolocation } from '@ionic-native/geolocation';
 import { EventsPage} from '../pages/events-page/events-page';
 import { EventInfoPage } from '../pages/event-info-page/event-info-page';
+import { TreasurehuntPage } from '../pages/treasurehunt-page/treasurehunt-page';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EventInfoPage } from '../pages/event-info-page/event-info-page';
     MapsPage,
     EventsPage,
     EventInfoPage,
+    TreasurehuntPage,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { EventInfoPage } from '../pages/event-info-page/event-info-page';
     CategoryPage,
     MapsPage,
     EventsPage,
-    EventInfoPage
+    EventInfoPage,
+    TreasurehuntPage
   ],
   providers: [
     StatusBar,
