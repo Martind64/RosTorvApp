@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { TreasurehuntPage } from '../treasurehunt-page/treasurehunt-page';
@@ -19,10 +19,9 @@ export class MapsPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  public currentLevel:any;
   public clues:any;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public geoLocation:Geolocation, private barcodeScanner: BarcodeScanner) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public geoLocation:Geolocation, private barcodeScanner: BarcodeScanner, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -97,8 +96,22 @@ export class MapsPage {
   scanBarcode(){
 
     this.barcodeScanner.scan().then((data) => {
+      let dataArray = data.text.split(',');
 
-      this.navCtrl.setRoot(TreasurehuntPage, {clue: data.text});
+      // Get the current level to determine whether or not the right clue was passed
+      let currentLevel = JSON.parse(sessionStorage.getItem('level'));
+
+      // If the clue lvl doesn't fit current level, throw an alert
+      if (currentLevel.lvl !== dataArray[0]) {
+            let alert = this.alertCtrl.create({
+            title: 'Hovsa',
+            subTitle: 'Det sport var vist ikke det du ledte efter',
+            buttons: ['OK']
+      });
+            return alert.present();
+      }
+
+      this.navCtrl.setRoot(TreasurehuntPage, {clueNumber: dataArray[0], clue: dataArray[1]});
   });
   }
 
