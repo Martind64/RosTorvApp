@@ -16,7 +16,7 @@ import { MapsPage } from '../maps-page/maps-page';
 export class TreasurehuntPage {
 
 	// Used to send positions of each button
-	public clues = [];
+	public clues:number[][] = [];
 
 	public completedClues:any;
 	public currentLevel:any;
@@ -29,19 +29,9 @@ export class TreasurehuntPage {
     this.getClues();
     this.fillClues();
 
-    // let alert = this.alertCtrl.create({
-
-    //     subTitle: this.currentLevel.lvl,
-    //     buttons: ['OK']
-    //   });
-    //   alert.present();  
   }
 
 
-
-  startGame(){
-
-  }
 
   goToMap(lat, lng){
   	this.navCtrl.push(MapsPage, {lat: lat, lng: lng});
@@ -50,10 +40,10 @@ export class TreasurehuntPage {
   // Make an array with the coordinates for the clues
   fillClues(){
   	this.clues = [
-		['55.642038', '12.098627'],
-		['55.642111', '12.100001'],
-		['55.641839', '12.100559'],
-		['55.641378', '12.099014']
+		[55.641685, 12.099619],
+		[55.641709, 12.098493],
+		[55.642045, 12.098793],
+		[55.642218, 12.100547]
   	];
   }
 
@@ -88,7 +78,7 @@ export class TreasurehuntPage {
   }
 
 
-    // Set the level of the game
+   // Set the level of the game
   setLevel(){
 
     // Set the current lvl property to the level of the storage so it can be incremented

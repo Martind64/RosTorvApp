@@ -17,7 +17,8 @@ declare var google;
 })
 export class MapsPage {
 
-  @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('map') 
+  mapElement: ElementRef;
   map: any;
   public clues:any;
   
@@ -38,8 +39,8 @@ export class MapsPage {
 	      center: latLng,
         disableDefaultUI: true,
 	      zoom: 18,
-
     }
+
     	this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
   	}, (err)=> {
   		console.log(err);
@@ -47,17 +48,24 @@ export class MapsPage {
 
   }
 
-    addInfoWindow(marker){
- 
-      let infoWindow = new google.maps.InfoWindow({
-      });
-     
+    addInfoWindow(marker, content?){
+      let infoWindow;
+
+      // If content haven't been passed, don't put it in the infowindow
+        if (content) {
+          infoWindow = new google.maps.InfoWindow({
+          content: content
+        });
+        }else{
+            infoWindow = new google.maps.InfoWindow({
+        });
+        }
+
       google.maps.event.addListener(marker, 'click', () => {
         infoWindow.open(this.map, marker);
       });
      
     }
-
 
       // Add Marker to the map with your current position
       // async is to delay the function so the dot with always show
@@ -82,8 +90,9 @@ export class MapsPage {
 
     // Used to reload map and set location again
     newMap(){
-      this.loadMap();
-      this.addMarker();
+      // this.loadMap();
+      // this.addMarker();
+      this.setClueMarker();
     }
 
     // Delays a function a given number of MS
@@ -93,9 +102,24 @@ export class MapsPage {
     });
   }
 
+  setClueMarker(){
+    // google.maps.event.addListenerOnce('bounds_changed', () => {});
+    let lat = this.navParams.get('lat');
+    let lng = this.navParams.get('lng');
+    let marker = new google.maps.Marker({
+              map: this.map,
+              animation: google.maps.Animation.DROP,
+              position: {lat: lat, lng: lng}
+            });     
+            let content = "<h4>Find mig!</h4>";          
+       
+          this.addInfoWindow(marker, content);
+  }
+
   scanBarcode(){
 
     this.barcodeScanner.scan().then((data) => {
+
       let dataArray = data.text.split(',');
 
       // Get the current level to determine whether or not the right clue was passed

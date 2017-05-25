@@ -9,15 +9,27 @@
   <ion-navbar>
     <ion-title>MapsPage</ion-title>
 
-    <ion-buttons end>
-<!--       <button ion-button (click)="newMap()"><ion-icon name="md-cloud-download"></ion-icon>ME<ion-icon name="md-cloud-download"></ion-icon></button>   -->
-      <button  id="glasses" ion-button (click)="scanBarcode()"><ion-icon name="md-glasses"></ion-icon></button>  
-	</ion-buttons>  
+ 
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-buttons end>
+      <!-- <button ion-button (click)="newMap()"><ion-icon name="md-cloud-download"></ion-icon>ME<ion-icon name="md-cloud-download"></ion-icon></button>   -->
+      <ion-grid>
+        <ion-row>
+          <ion-col col-md-3>
+            <button ion-button block (click)="setClueMarker()">Vis sporet</button>
+          </ion-col>
+          <ion-col col-md-3>
+            <button ion-button block id="glasses" ion-button (click)="scanBarcode()">Sporet er fundet!</button>  
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+  </ion-buttons> 
+
  <div #map id="map"></div>
 </ion-content>
