@@ -29,28 +29,12 @@ export class TreasurehuntPage {
     this.getClues();
     this.fillClues();
 
-    // let clue = this.navParams.get('clue');
-
     // let alert = this.alertCtrl.create({
 
     //     subTitle: this.currentLevel.lvl,
     //     buttons: ['OK']
     //   });
     //   alert.present();  
-
-    //  this.completedClues = JSON.parse(sessionStorage.getItem('clues'));
-    // if (this.completedClues === null) {
-    //   this.completedClues = {clue1: null, clue2: null, clue3: null, clue4: null};
-    // }
-
-  	// let alert = this.alertCtrl.create({
-
-   //      subTitle: this.completedClues.clue1 + this.completedClues.clue2 + this.completedClues.clue3 + this.completedClues.clue4,
-   //      buttons: ['OK']
-   //    });
-   //    alert.present();	
-   	// this.clues = JSON.parse(sessionStorage.getItem('clue'));
-
   }
 
 
@@ -130,6 +114,15 @@ export class TreasurehuntPage {
     // Set the current lvl of the game
     this.currentLevel = JSON.parse(sessionStorage.getItem('level'));
 
+  }
+
+  lockedClueAlert(){
+    let alert = this.alertCtrl.create({
+        title: 'Hey hey',
+        subTitle: 'Du er desværre nødt til at finde de forrige spor før jeg kan bruges',
+        buttons: ['OK']
+      });
+      alert.present();  
   }
 
 }

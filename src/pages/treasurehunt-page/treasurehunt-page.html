@@ -36,7 +36,7 @@
 			<!-- Show the button that fits the current level -->
 				<button *ngIf="currentLevel?.lvl == '2'" ion-button block (click)="goToMap(clues[1][0], clues[1][1])">Spor 2</button>
 			<!-- If the previous lvl hasn't been passed yet, show a locked button -->	
-				<button *ngIf="currentLevel?.lvl == '1'" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
+				<button *ngIf="currentLevel?.lvl == '1'" (click)="lockedClueAlert()" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
 
 			<!-- If the current lvl has been passed, show the clue that was found -->
 				<button *ngIf="currentLevel?.lvl == '3' || currentLevel?.lvl == '4'"ion-button block>{{completedClues?.clue2}}</button>
@@ -49,7 +49,7 @@
 			<!-- Show the button that fits the current level -->
 				<button *ngIf="currentLevel?.lvl == '3'" ion-button block (click)="goToMap(clues[2][0], clues[2][1])">Spor 3</button>
 			<!-- If the previous lvl hasn't been passed yet, show a locked button -->	
-				<button *ngIf="currentLevel?.lvl == '1' || currentLevel?.lvl == '2'" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
+				<button *ngIf="currentLevel?.lvl == '1' || currentLevel?.lvl == '2'"  (click)="lockedClueAlert()" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
 
 			<!-- If the current lvl has been passed, show the clue that was found -->
 				<button *ngIf="currentLevel?.lvl == '4'"ion-button block>{{completedClues?.clue3}}</button>
@@ -63,7 +63,7 @@
 				<button *ngIf="currentLevel?.lvl == '4'" ion-button block (click)="goToMap(clues[3][0], clues[3][1])">Spor 4</button>
 
 			<!-- If the previous lvl hasn't been passed yet, show a locked button -->	
-				<button *ngIf="currentLevel?.lvl == '1' ||currentLevel?.lvl == '2' || currentLevel?.lvl == '3'" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
+				<button *ngIf="currentLevel?.lvl == '1' ||currentLevel?.lvl == '2' || currentLevel?.lvl == '3'" (click)="lockedClueAlert()"  ion-button block><ion-icon name="ios-lock"></ion-icon></button>
 
 			<!-- If the current lvl has been passed, show the clue that was found -->
 				<!-- <button *ngIf="currentLevel?.lvl == 'complete'"ion-button block>{{completedClues?.clue4}}</button> -->
@@ -76,7 +76,7 @@
 		<br>
 		<h4>Fulde Sætning</h4>
 		<hr>
-		<h4r><u>{{completedClues?.clue1}} {{completedClues?.clue2}} {{completedClues?.clue3}} {{completedClues?.clue4}}</u></h4>
+		<h4><u>{{completedClues?.clue1}} {{completedClues?.clue2}} {{completedClues?.clue3}} {{completedClues?.clue4}}</u></h4>
 	</div>
 </ion-grid> <!-- End Main Grid -->
 </ion-content>
