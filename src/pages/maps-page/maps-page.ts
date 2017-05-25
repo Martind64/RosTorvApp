@@ -20,10 +20,9 @@ export class MapsPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   public currentLevel:any;
-  public clue:any;
+  public clues:any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public geoLocation:Geolocation, private barcodeScanner: BarcodeScanner) {
-    this.setLevel();
   }
 
   ionViewDidLoad() {
@@ -98,40 +97,10 @@ export class MapsPage {
   scanBarcode(){
 
     this.barcodeScanner.scan().then((data) => {
-      if (sessionStorage.getItem('clue') != null) {
-        this.clue = JSON.parse(sessionStorage.getItem('clue'));
-      }
-      if (sessionStorage.getItem('clue') == null) {
-        sessionStorage.setItem('clue', JSON.stringify({clue: data.text}));
-      }else{
-        sessionStorage.setItem('clue', JSON.stringify({}))
-      }
-      sessionStorage.setItem('clue', JSON.stringify({clue : data.text}));
-      this.navCtrl.setRoot(TreasurehuntPage)
+
+      this.navCtrl.setRoot(TreasurehuntPage, {clue: data.text});
   });
   }
 
-  // Set the level of the game
-  setLevel(){
-      // Set the current lvl property to the level of the storage so it can be incremented
-      this.currentLevel = JSON.parse(sessionStorage.getItem('level'));
-      if (!this.currentLevel) {
-        this.currentLevel = {lvl: null};
-      }
-      console.log(this.currentLevel.lvl);
-
-      if (this.currentLevel.lvl == null) {
-        sessionStorage.setItem('level', JSON.stringify({lvl: '1'}));
-      }else if(this.currentLevel.lvl == '1'){
-        sessionStorage.setItem('level', JSON.stringify({lvl: '2'}));
-      }else if(this.currentLevel.lvl == '2'){
-        sessionStorage.setItem('level', JSON.stringify({lvl: '3'}));
-      }else if(this.currentLevel.lvl == '3'){
-        sessionStorage.setItem('level', JSON.stringify({lvl: '4'}));
-      }else if (this.currentLevel.lvl == '4') {
-         sessionStorage.setItem('level', JSON.stringify({lvl: 'complete'}));
-      }
-      console.log(this.currentLevel.lvl);
-  }
 
 }
