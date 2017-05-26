@@ -1,0 +1,23 @@
+<!--
+  Generated template for the StorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>storePage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page" padding>
+<ion-searchbar (ionInput)="searchStores($event)"></ion-searchbar>
+
+	<ion-card *ngFor="let store of finalStores">
+		<img src="img/img.png">
+		<div class="card-title">{{store.name | formatstore }}</div>
+	</ion-card>
+</ion-content>

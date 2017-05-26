@@ -14,6 +14,8 @@ import { EventsPage} from '../pages/events-page/events-page';
 import { EventInfoPage } from '../pages/event-info-page/event-info-page';
 import { TreasurehuntPage } from '../pages/treasurehunt-page/treasurehunt-page';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { StorePage } from '../pages/store-page/store-page';
+import { Formatstore } from '../pipes/formatstore';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     EventsPage,
     EventInfoPage,
     TreasurehuntPage,
+    StorePage,
+    Formatstore,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MapsPage,
     EventsPage,
     EventInfoPage,
-    TreasurehuntPage
+    TreasurehuntPage,
+    StorePage
   ],
   providers: [
     StatusBar,

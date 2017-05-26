@@ -30,9 +30,9 @@ export class EventsPage {
   }
 
     public getEvents(){
-	    this.http.get("http://localhost:8000/api/v1/event")
+	    this.http.get("http://rostorv.mhdelfs.com/api/v1/event")
 	    .subscribe(events => this.events = events.json());
-	    console.log(this.events);
+	    // console.log(this.events);
   }
   	public selectedEvent:Event;
 

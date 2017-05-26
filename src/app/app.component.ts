@@ -9,12 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { MapsPage } from '../pages/maps-page/maps-page';
 import { EventsPage } from '../pages/events-page/events-page';
 import { TreasurehuntPage } from '../pages/treasurehunt-page/treasurehunt-page';
+import { StorePage } from '../pages/store-page/store-page';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TreasurehuntPage;
+  rootPage:any = StorePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -23,6 +24,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  getStores(){
+    
   }
 }
 

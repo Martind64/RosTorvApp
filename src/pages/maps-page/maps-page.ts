@@ -129,7 +129,7 @@ export class MapsPage {
       if (currentLevel.lvl !== dataArray[0]) {
             let alert = this.alertCtrl.create({
             title: 'Hovsa',
-            subTitle: 'Det sport var vist ikke det du ledte efter',
+            subTitle: 'Det spor var vist ikke det du ledte efter',
             buttons: ['OK']
       });
             return alert.present();
