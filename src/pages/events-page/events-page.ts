@@ -17,7 +17,7 @@ import { EventInfoPage } from '../event-info-page/event-info-page';
 export class EventsPage {
 
 
-	  public eventsinfoPage=EventInfoPage;
+	  public eventsinfoPage = EventInfoPage;
 
 	  public events:Array<Event> = new Array<Event>();
 

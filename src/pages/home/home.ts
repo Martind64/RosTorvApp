@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { EventsPage } from '../events-page/events-page';
-
+import { StorePage } from '../store-page/store-page';
 import { CategoryPage } from '../category-page/category-page';
+import { TreasurehuntPage } from '../treasurehunt-page/treasurehunt-page';
 
 
 @Component({
@@ -11,8 +12,10 @@ import { CategoryPage } from '../category-page/category-page';
 })
 export class HomePage {
 
-public eventsPage=EventsPage;
-public categoriesPage=CategoryPage;
+public eventsPage = EventsPage;
+public categoriesPage = CategoryPage;
+public storePage = StorePage;
+public treasurehuntPage = TreasurehuntPage;
 
 
   constructor(public navCtrl: NavController) { }

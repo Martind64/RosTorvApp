@@ -16,7 +16,7 @@
 <ion-content class="card-background-page" padding>
 <ion-searchbar (ionInput)="searchStores($event)"></ion-searchbar>
 
-	<ion-card *ngFor="let store of finalStores">
+	<ion-card *ngFor="let store of finalStores" (click)="dailyOffer(store.id)">
 		<img src="img/img.png">
 		<div class="card-title">{{store.name | formatstore }}</div>
 	</ion-card>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { DailyofferPage } from '../dailyoffer-page/dailyoffer-page';
 
 /**
  * Generated class for the StorePage page.
@@ -63,6 +64,10 @@ export class StorePage {
         return (store.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  dailyOffer(storeId:number){
+    this.navCtrl.push(DailyofferPage, {storeId: storeId});
   }
 
 }

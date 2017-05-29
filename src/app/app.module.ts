@@ -16,6 +16,7 @@ import { TreasurehuntPage } from '../pages/treasurehunt-page/treasurehunt-page';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { StorePage } from '../pages/store-page/store-page';
 import { Formatstore } from '../pipes/formatstore';
+import { DailyofferPage } from '../pages/dailyoffer-page/dailyoffer-page';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { Formatstore } from '../pipes/formatstore';
     TreasurehuntPage,
     StorePage,
     Formatstore,
+    DailyofferPage,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { Formatstore } from '../pipes/formatstore';
     EventsPage,
     EventInfoPage,
     TreasurehuntPage,
-    StorePage
+    StorePage,
+    DailyofferPage,
   ],
   providers: [
     StatusBar,

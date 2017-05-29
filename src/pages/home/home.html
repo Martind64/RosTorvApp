@@ -8,16 +8,16 @@
 
 <ion-content padding class="getstart">
 <ion-grid>
-  <ion-row >
-    <ion-col style="">
-        <ion-card class="pic">
+  <ion-row>
+    <ion-col>
+        <ion-card class="pic" [navPush]="storePage">
           <img src="img/ugens_tilbud.png">
-          <!-- <div class="card-title">Dagens TIlbud!</div> -->
+          <div class="card-title"></div>
       </ion-card>
     </ion-col>
     <ion-col>
-        <ion-card class="pic">
-          <img src="img/tresuremap.jpg">
+        <ion-card class="pic" [navPush]="treasurehuntPage">
+          <img src="img/treasureMap.jpg">
           <div class="card-title">Skatte Jagt!</div>
         </ion-card>
     </ion-col>
