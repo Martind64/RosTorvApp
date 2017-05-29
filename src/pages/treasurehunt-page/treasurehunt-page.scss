@@ -4,4 +4,24 @@ page-treasurehunt-page {
 		margin-top: 15%;
 	}
 
+/* sets background for whole tresurehunt site */
+.pback {
+background: url('../../img/piratebackground.jpg');
+background-repeat: no-repeat;
+background-size:cover;
+}
+/* Background color and button size */
+.bclass {
+	background-color: #3d1a1a;
+	font-weight: bold;
+	font-size: 130%;
+	color: #d35902;
+	padding: 12% 18%;
+}
+/* Background picture when chain */
+.chain {
+	background-image: url('../../img/chain1.png');
+	background-repeat: no-repeat;
+	background-size:cover;
+}
 }

@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="pback" padding>
 <ion-grid> <!-- Start Main Grid -->
 
 
@@ -24,9 +24,9 @@
 		<ion-row >
 			<ion-col col-12 text-center padding>
 			<!-- Show the button that fits the current level -->
-				<button *ngIf="currentLevel?.lvl == '1'" ion-button block (click)="goToMap(clues[0][0], clues[0][1])">Spor 1</button>
+				<button round class="bclass" *ngIf="currentLevel?.lvl == '1'" ion-button block (click)="goToMap(clues[0][0], clues[0][1])">Spor 1</button>
 			<!-- If the current lvl has been passed, show the clue that was found -->
-				<button *ngIf="currentLevel?.lvl == 2 || currentLevel?.lvl == 3 || currentLevel?.lvl == 4" ion-button block>{{completedClues?.clue1}}</button>
+				<button round class="bclass" *ngIf="currentLevel?.lvl == 2 || currentLevel?.lvl == 3 || currentLevel?.lvl == 4" ion-button block>{{completedClues?.clue1}}</button>
 			</ion-col>
 		</ion-row>
 
@@ -34,12 +34,12 @@
 		<ion-row >
 			<ion-col col-12 text-center padding>
 			<!-- Show the button that fits the current level -->
-				<button *ngIf="currentLevel?.lvl == '2'" ion-button block (click)="goToMap(clues[1][0], clues[1][1])">Spor 2</button>
+				<button round class="bclass" *ngIf="currentLevel?.lvl == '2'" ion-button block (click)="goToMap(clues[1][0], clues[1][1])">Spor 2</button>
 			<!-- If the previous lvl hasn't been passed yet, show a locked button -->	
-				<button *ngIf="currentLevel?.lvl == '1'" (click)="lockedClueAlert()" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
+				<button round class="bclass chain" *ngIf="currentLevel?.lvl == '1'" (click)="lockedClueAlert()" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
 
 			<!-- If the current lvl has been passed, show the clue that was found -->
-				<button *ngIf="currentLevel?.lvl == '3' || currentLevel?.lvl == '4'"ion-button block>{{completedClues?.clue2}}</button>
+				<button round class="bclass" *ngIf="currentLevel?.lvl == '3' || currentLevel?.lvl == '4'"ion-button block>{{completedClues?.clue2}}</button>
 			</ion-col>
 		</ion-row>
 
@@ -47,12 +47,12 @@
 		<ion-row >
 			<ion-col col-12 text-center padding>
 			<!-- Show the button that fits the current level -->
-				<button *ngIf="currentLevel?.lvl == '3'" ion-button block (click)="goToMap(clues[2][0], clues[2][1])">Spor 3</button>
+				<button round class="bclass" *ngIf="currentLevel?.lvl == '3'" ion-button block (click)="goToMap(clues[2][0], clues[2][1])">Spor 3</button>
 			<!-- If the previous lvl hasn't been passed yet, show a locked button -->	
-				<button *ngIf="currentLevel?.lvl == '1' || currentLevel?.lvl == '2'"  (click)="lockedClueAlert()" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
+				<button round class="bclass chain" *ngIf="currentLevel?.lvl == '1' || currentLevel?.lvl == '2'"  (click)="lockedClueAlert()" ion-button block><ion-icon name="ios-lock"></ion-icon></button>
 
 			<!-- If the current lvl has been passed, show the clue that was found -->
-				<button *ngIf="currentLevel?.lvl == '4'"ion-button block>{{completedClues?.clue3}}</button>
+				<button round class="bclass" *ngIf="currentLevel?.lvl == '4'"ion-button block>{{completedClues?.clue3}}</button>
 			</ion-col>
 		</ion-row>
 
@@ -60,10 +60,10 @@
 		<ion-row >
 			<ion-col col-12 text-center padding>
 			<!-- Show the button that fits the current level -->
-				<button *ngIf="currentLevel?.lvl == '4'" ion-button block (click)="goToMap(clues[3][0], clues[3][1])">Spor 4</button>
+				<button round class="bclass" *ngIf="currentLevel?.lvl == '4'" ion-button block (click)="goToMap(clues[3][0], clues[3][1])">Spor 4</button>
 
 			<!-- If the previous lvl hasn't been passed yet, show a locked button -->	
-				<button *ngIf="currentLevel?.lvl == '1' ||currentLevel?.lvl == '2' || currentLevel?.lvl == '3'" (click)="lockedClueAlert()"  ion-button block><ion-icon name="ios-lock"></ion-icon></button>
+				<button round class="bclass chain" *ngIf="currentLevel?.lvl == '1' ||currentLevel?.lvl == '2' || currentLevel?.lvl == '3'" (click)="lockedClueAlert()"  ion-button block><ion-icon name="ios-lock"></ion-icon></button>
 
 			<!-- If the current lvl has been passed, show the clue that was found -->
 				<!-- <button *ngIf="currentLevel?.lvl == 'complete'"ion-button block>{{completedClues?.clue4}}</button> -->

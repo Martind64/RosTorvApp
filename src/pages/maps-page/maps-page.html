@@ -15,16 +15,16 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="pback" padding>
     <ion-buttons end>
       <!-- <button ion-button (click)="newMap()"><ion-icon name="md-cloud-download"></ion-icon>ME<ion-icon name="md-cloud-download"></ion-icon></button>   -->
       <ion-grid>
         <ion-row>
           <ion-col col-md-3>
-            <button ion-button block (click)="setClueMarker()">Vis sporet</button>
+            <button ion-button round class="mapbutton" block (click)="setClueMarker()">Vis sporet</button>
           </ion-col>
           <ion-col col-md-3>
-            <button ion-button block id="glasses" ion-button (click)="scanBarcode()">Sporet er fundet!</button>  
+            <button ion-button round class="mapbutton" block id="glasses" ion-button (click)="scanBarcode()">Sporet er fundet!</button>  
           </ion-col>
         </ion-row>
       </ion-grid>

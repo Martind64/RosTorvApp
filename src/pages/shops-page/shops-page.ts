@@ -44,13 +44,15 @@ export class ShopsPage {
              break;
              case "Tøj":
              this.stores = ['H&M', 'Kings And Queens', 'Tøjexperten', 'Luciano Grosso', 'Mr. Møllebach', 'No8', 'Sams', 'Samsøe Samsøe', 'Suitmeup', 'Superdry', 'Trendstar']
+             break;
              case "Damemode":
              this.stores = ['Bonde Boutique', 'By Mo', 'Companys', 'Copenhagen Luxe', 'Deres', 'Esprit', 'H&M', 'Hunkemôller', 'Kings & Queens', 'Message', 'Only', 'Pieces', 'Samsøe & Samsøe', 'Schack & Thorsten', 'Solo', 'Superdry', 'Trendstar', 'Triumph', 'Vila']
-             case "SkønhedSunhed":
+             break;
+             case "SkønhedSundhed":
              this.stores = ['Apoteket RO’s Torv', 'Beauty by Boozt.com', 'Matas', 'Nice Thai Massage', 'Normal', 'Queens Nails', 'Salon Unique']
-
+             break;
             default:
-              "Shit happend!"
+              console.log("Shit happend!")
               break;
           }
     }
