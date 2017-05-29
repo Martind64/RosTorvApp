@@ -1,13 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Rostorv - menu
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<p>
-  Home
-</p>
+<ion-content padding class="getstart">
+<ion-grid>
+  <ion-row >
+    <ion-col style="">
+        <ion-card class="pic">
+          <img src="img/ugens_tilbud.png">
+          <!-- <div class="card-title">Dagens TIlbud!</div> -->
+      </ion-card>
+    </ion-col>
+    <ion-col>
+        <ion-card class="pic">
+          <img src="img/tresuremap.jpg">
+          <div class="card-title">Skatte Jagt!</div>
+        </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-card class="pic" (click)="eventPage();">
+       <img src="img/event.png">
+       <div class="card-title">Events</div>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card class="pic" (click)="categoryPage();">
+        <img src="img/shops1.png">
+        <div class="card-title">Butikker</div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>

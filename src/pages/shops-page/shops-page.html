@@ -12,10 +12,12 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content class="getstart" padding>
    <ion-list>
+   <div class="container">
     <ion-item *ngFor="let store of stores">
-      <p>{{store.name}}</p>
+      <p>{{store}}</p>
     </ion-item>
+   </div>
    </ion-list>
 </ion-content>

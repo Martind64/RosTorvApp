@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ShopsPage } from '../shops-page/shops-page';
+
 
 /**
  * Generated class for the CategoryPage page.
@@ -16,6 +18,11 @@ export class CategoryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
+ 
+ 	shopsPage(category:string){
+ 		this.navCtrl.push(ShopsPage, {name:category});
+ 	}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryPage');

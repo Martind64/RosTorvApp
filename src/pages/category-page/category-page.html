@@ -7,37 +7,77 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>CategoryPage</ion-title>
+    <ion-title>kategorier</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="getstart" padding>
 	<ion-grid>
 		<ion-row>
 			<ion-col col-6>
-				Row One
+				<ion-card class="pic" (click)="shopsPage('elektronik')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Elektronik</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
 			</ion-col>
 			<ion-col col-6>
-				Row One
+				<ion-card class="pic" (click)="shopsPage('Tøj')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Herre Tøj</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-6>
-				Row Two
+				<ion-card class="pic" (click)="shopsPage('Mad')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Mad</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
 			</ion-col>
 			<ion-col col-6>
-				Row Two
+				<ion-card class="pic" (click)="shopsPage('Sport')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Sport</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col col-6>
-				Row Three
+				<ion-card class="pic" (click)="shopsPage('Dagligdagsvare')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Digligvare</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
 			</ion-col>
 			<ion-col col-6>
-				Row Three
+				<ion-card class="pic" (click)="shopsPage('BoligLivstil')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Bolig og Livstil</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
 			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-6>
+				<ion-card class="pic" (click)="shopsPage('Damemode')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Dame mode</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
+			</ion-col>
+			<ion-col col-6>
+				<ion-card class="pic" (click)="shopsPage('SkønhedSunhed')">
+          			<img src="img/placeholder.jpg">
+			        <div class="card-title">Dame mode</div>
+          			<!-- <div class="card-title">Dagens TIlbud!</div> -->
+      			</ion-card>
+			</ion-col>			
 		</ion-row>
 	</ion-grid>
 </ion-content>

@@ -1,3 +1,36 @@
 page-category-page {
+.pic {
+  width: 100%;
+  height: 100%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
 
+ion-row {
+  padding-bottom: 2px;
+}
+
+ion-card {
+    position: relative;
+    text-align: center;
+    height: 130px;
+    width: 130px;
+    border: 1px solid black;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 30%;
+    font-size: 1.4em;
+    width: 100%;
+    font-weight: bold;
+    color: grey;
+  }
+  .getstart{
+background: url('../../img/shopping.jpg');
+background-repeat: no-repeat;
+background-size:cover;
+}
 }
