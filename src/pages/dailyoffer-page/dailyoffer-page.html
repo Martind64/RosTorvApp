@@ -14,5 +14,23 @@
 
 
 <ion-content padding>
-
+<!-- Button for testing -->
+<!-- <button ion-button (click)="log()">log</button> -->
+<ion-grid>
+	<ion-row text-center>
+		<ion-col col-12>
+			<h1>
+				{{selectedStore?.name | formatstore }}
+			</h1>
+			<h2>Ugens tilbud</h2>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col col-12>
+			<ion-card>
+				<img src="img/question.jpg">
+			</ion-card>
+		</ion-col>
+	</ion-row>
+</ion-grid>
 </ion-content>

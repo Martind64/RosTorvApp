@@ -14,6 +14,9 @@ export class Formatstore implements PipeTransform {
    * Takes a value and makes it lowercase.
    */
   transform(value: string) {
+  	if (value == null) {
+  		return;
+  	}
   	let result = value.replace(/[_]/g, ' ');
   	return result;
   }
