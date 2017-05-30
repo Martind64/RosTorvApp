@@ -31,20 +31,18 @@ export class MapsPage {
   }
 
   loadMap(){
-  	this.geoLocation.getCurrentPosition().then((position) => {
 
-	    let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	    let latLng = new google.maps.LatLng(55.641858,  12.099619);
 	     
 	    let mapOptions = {
 	      center: latLng,
         disableDefaultUI: true,
-	      zoom: 18,
+	      zoom: 17,
+        styles: this.design,
     }
 
     	this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-  	}, (err)=> {
-  		console.log(err);
-  	});
+
 
   }
 
@@ -103,13 +101,22 @@ export class MapsPage {
   }
 
   setClueMarker(){
-    // google.maps.event.addListenerOnce('bounds_changed', () => {});
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+      var cross = {
+        path: "M05 05 15 15 M15 05 05 15",
+        fillColor: 'red',
+        fillOpacity: 1,
+        strokeColor: 'red',
+        strokeWeight: 3
+      };
+
     let lat = this.navParams.get('lat');
     let lng = this.navParams.get('lng');
     let marker = new google.maps.Marker({
               map: this.map,
               animation: google.maps.Animation.DROP,
-              position: {lat: lat, lng: lng}
+              position: {lat: lat, lng: lng},
+              icon: cross
             });     
             let content = "<h4>Find mig!</h4>";          
        
@@ -139,5 +146,238 @@ export class MapsPage {
   });
   }
 
-
+public design = [
+    {
+        "featureType": "landscape",
+        "stylers": [
+            {
+                "hue": "#FFB000"
+            },
+            {
+                "saturation": 71.66666666666669
+            },
+            {
+                "lightness": -28.400000000000006
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "stylers": [
+            {
+                "hue": "#E8FF00"
+            },
+            {
+                "saturation": -76.6
+            },
+            {
+                "lightness": 113
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "stylers": [
+            {
+                "hue": "#FF8300"
+            },
+            {
+                "saturation": -77
+            },
+            {
+                "lightness": 27.400000000000006
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "stylers": [
+            {
+                "hue": "#FF8C00"
+            },
+            {
+                "saturation": -66.6
+            },
+            {
+                "lightness": 34.400000000000006
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [
+            {
+                "hue": "#00C4FF"
+            },
+            {
+                "saturation": 22.799999999999997
+            },
+            {
+                "lightness": -11.399999999999991
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },{
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.attraction",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.attraction",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.attraction",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.attraction",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.government",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.government",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.government",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.medical",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#e6f0d7"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.place_of_worship",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.school",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.sports_complex",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    
+]
 }
