@@ -2,11 +2,11 @@ page-category-page {
 .pic {
   width: 100%;
   height: 100%;
+  padding-bottom: 40px;
+  display: block;
+  background-color: #555c68;
 }
-img {
-  width: 100%;
-  height: 100%;
-}
+
 
 ion-row {
   padding-bottom: 2px;
@@ -15,22 +15,24 @@ ion-row {
 ion-card {
     position: relative;
     text-align: center;
-    height: 130px;
-    width: 130px;
     border: 1px solid black;
   }
 
   .card-title {
     position: absolute;
     top: 30%;
-    font-size: 1.4em;
+    font-size: 1.3em;
     width: 100%;
     font-weight: bold;
-    color: grey;
+    color: white;
+    word-wrap: break-word;
   }
   .getstart{
-background: url('../../img/shopping.jpg');
+background: url('../../img/grey.jpg');
 background-repeat: no-repeat;
 background-size:cover;
+}
+  .fgrid {
+  padding-right: 8%;
 }
 }
