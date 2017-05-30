@@ -5,10 +5,14 @@ page-treasurehunt-page {
 	}
 
 /* sets background for whole tresurehunt site */
-.pback {
-background: url('../../img/piratebackground.jpg');
+.content{
+background: url('../img/piratebackground.jpg');
 background-repeat: no-repeat;
 background-size:cover;
+}
+
+.pane{
+
 }
 /* Background color and button size */
 .bclass {
@@ -20,7 +24,7 @@ background-size:cover;
 }
 /* Background picture when chain */
 .chain {
-	background-image: url('../../img/chain1.png');
+	background-image: url('../img/chain1.png');
 	background-repeat: no-repeat;
 	background-size:cover;
 }
